@@ -6,11 +6,11 @@ const messageRoutes = Router();
 const messageRepository = new MessageRepository();
 
 messageRoutes.post('/', (req, res) => {
- const { name, message } = req.body;
+ const { name, message, messageType } = req.body;
 
  const createMessageServices = new CreateMessageServices(messageRepository);
 
- createMessageServices.execute({ name, message });
+ createMessageServices.execute({ name, message, messageType });
 
  return res.status(201).json({ message: 'Mensagem enviada!' });
 });
