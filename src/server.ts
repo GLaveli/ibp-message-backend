@@ -9,5 +9,5 @@ app.use(express.json());
 app.use('/message', messageRoutes);
 
 app.listen(PORT, () => {
- console.info(`App started at port ${PORT}`);
+ console.info(`Server started at port: ${PORT}`);
 });
