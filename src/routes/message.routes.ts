@@ -10,9 +10,9 @@ messageRoutes.post('/', (req, res) => {
 
  const createMessageServices = new CreateMessageServices(messageRepository);
 
- createMessageServices.execute({ name, message, messageType });
+ const response = createMessageServices.execute({ name, message, messageType });
 
- return res.status(201).json({ message: 'Mensagem enviada!' });
+ return res.status(201).json({ message: 'created!' });
 });
 
 messageRoutes.get('/', (req, res) => {
